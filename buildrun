@@ -1,0 +1,22 @@
+#!/bin/bash
+platform=lin64
+echo "Please enter a number to select target build directory"
+echo "1: lin64"
+echo "2: lin32"
+echo "3: win64"
+echo "4: win32"
+read entry
+case $entry in
+    "")  echo "Please enter a number between 1-4"; exit 1 ;;
+    1)   platform=lin64 ;;
+    2)   platform=lin32 ;;
+    3)   platform=win64 ;;
+    4)   platform=win32 ;;
+    *)   echo "Entry not recognized."; exit 1 ;;
+esac
+echo "Building lib to $platform folder"
+fbc -dylib cfbgfx.bas -x "./lib/$platform/libcfbgfx.so"
+echo "Building c++ game"
+g++ -o game game.cpp -L./lib/$platform -lcfbgfx
+echo "Running c++ game"
+LD_LIBRARY_PATH=./lib/$platform:$LD_LIBRARY_PATH ./game
