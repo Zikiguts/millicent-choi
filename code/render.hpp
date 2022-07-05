@@ -83,12 +83,16 @@ void render(map &map1,camera &cam,vector<graphic> &tileset,vector<graphic> &agen
             switch (agents.at(i).animstate) {
             case 0:
                 agent_tiles.at(0).render(cam,px,py-agent_tiles.at(0).h,false,py,true,true,agents.at(i).ang,agents.at(i).frame);
+                break;
             case 1:
                 agent_tiles.at(1).render(cam,px,py-agent_tiles.at(1).h,false,py,true,true,agents.at(i).ang,agents.at(i).frame);
+                break;
             case 2:
                 agent_tiles.at(2).render(cam,px,py-agent_tiles.at(2).h,false,py,true,true,agents.at(i).ang,agents.at(i).frame);
+                break;
             case 3:
                 agent_tiles.at(3).render(cam,px,py-agent_tiles.at(3).h,false,py,true,true,agents.at(i).ang,agents.at(i).frame);
+                break;
             }
         }
         else {
@@ -98,12 +102,16 @@ void render(map &map1,camera &cam,vector<graphic> &tileset,vector<graphic> &agen
                 switch (agents.at(i).animstate) {
                 case 0:
                     agent_tiles.at(0).render(cam,px,py-agent_tiles.at(0).h,false,py,true,true,agents.at(i).ang,agents.at(i).frame);
+                    break;
                 case 1:
                     agent_tiles.at(1).render(cam,px,py-agent_tiles.at(1).h,false,py,true,true,agents.at(i).ang,agents.at(i).frame);
+                    break;
                 case 2:
                     agent_tiles.at(2).render(cam,px,py-agent_tiles.at(2).h,false,py,true,true,agents.at(i).ang,agents.at(i).frame);
+                    break;
                 case 3:
                     agent_tiles.at(3).render(cam,px,py-agent_tiles.at(3).h,false,py,true,true,agents.at(i).ang,agents.at(i).frame);
+                    break;
                 }
             }
             else if (agents.at(player).findmemory(i)>=0) {

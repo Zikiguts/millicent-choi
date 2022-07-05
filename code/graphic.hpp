@@ -61,6 +61,39 @@ class graphic {
 
         redim img(frames,angles) as any ptr
         */
+        strcpy(temp1,filename);
+        strcat(temp1,"anim");
+        
+        fstream file;
+        file.open(temp1, ios_base::in);
+        //char mychar=' ';
+        
+        string element;
+        getline(file,element,',');
+        strcpy(temp1,element.c_str());
+        frames=convertInt(temp1);
+        
+        getline(file,element,',');
+        strcpy(temp1,element.c_str());
+        start=convertInt(temp1);
+        
+        getline(file,element,',');
+        strcpy(temp1,element.c_str());
+        angles=convertInt(temp1);
+        
+        file.close();
+        
+        cPrintInt(frames);
+        cPrintInt(start);
+        cPrintInt(angles);
+        cFlip();
+        //cSleep();
+        //img.resize(frames+1);
+        //dk.resize(frames+1);
+        //img.at(0).resize(angles+1);
+        //dk.at(0).resize(angles+1);
+        
+        
         if (start<10) {
             strcpy(temp1,"000");
             convertStr(start,temp2);

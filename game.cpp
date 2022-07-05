@@ -21,8 +21,8 @@ int main(int32_t argc, char **argv) {
     ui.strings[3]=strdup("Right click to remove object.");
     ui.strings[4]=strdup("Left click to place object.");
     ui.strings[5]=strdup("Press '-' and '=' to change object.");
-    ui.strings[6]=strdup("You wake up cold and alone in a bright room.");
-    ui.strings[7]=strdup("You get up to take a look around...");
+    ui.strings[6]=strdup("Press 'y' to open pixel editor");
+    ui.strings[7]=strdup("'p' pencil : 'f' fill : 'k' picker");
 
     ui.textboxes[0].init(2,0.25,0.05,0.45,0.05);
     ui.textboxes[1].init(3,0.25,0.10,0.45,0.05);
